@@ -3,422 +3,174 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hania kończy roczek! 🎈</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<title>1. Urodziny Hani!</title>
 <style>
-  :root{
-    --cream:#FDF8EF;
-    --cream-deep:#F7EEDC;
-    --rose:#E8919E;
-    --rose-deep:#D9707F;
-    --violet:#A593C9;
-    --sun:#F0B94A;
-    --peach:#EFA678;
-    --sky:#9FCBDB;
-    --leaf:#B5C98A;
-    --ink:#4B4458;
+  @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Great+Vibes&family=Montserrat:wght@500;700&display=swap');
+
+  body {
+    /* Tło w różowo-białe paski z drugiego obrazka */
+    background: repeating-linear-gradient(
+      90deg,
+      #ffdbea,
+      #ffdbea 20px,
+      #ffffff 20px,
+      #ffffff 40px
+    );
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
   }
 
-  *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;}
-
-  body{
-    background:var(--cream);
-    font-family:'Quicksand',sans-serif;
-    color:var(--ink);
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:32px 16px;
-    overflow-x:hidden;
+  .card {
+    background: #fffcf8;
+    /* Falista ramka zrobiona za pomocą zaokrągleń i cienia */
+    border: 6px solid #f48bb0;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 450px;
+    padding: 50px 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    overflow: hidden;
   }
 
-  @media (prefers-reduced-motion: no-preference){
-    .sun-rays{ animation: spin 40s linear infinite; transform-origin: 78% 12%; }
-    .float-1{ animation: bob 6s ease-in-out infinite; }
-    .float-2{ animation: bob 7s ease-in-out infinite 1s; }
-    .photo-wrap{ animation: pop-in 0.9s cubic-bezier(.2,.9,.25,1.2) both; }
-    .reveal{ animation: rise 0.8s ease both; }
+  /* Tęcza z pierwszego obrazka (lewa strona) */
+  .rainbow {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    font-size: 70px;
+    transform: rotate(-15deg);
   }
 
-  @keyframes spin{ from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
-  @keyframes bob{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
-  @keyframes pop-in{ from{transform:scale(.85); opacity:0} to{transform:scale(1); opacity:1} }
-  @keyframes rise{ from{transform:translateY(14px); opacity:0} to{transform:translateY(0); opacity:1} }
-
-  .card{
-    position:relative;
-    width:100%;
-    max-width:440px;
-    background:var(--cream);
-    border-radius:34px;
-    overflow:hidden;
-    box-shadow: 0 30px 60px -20px rgba(75,68,88,0.25), 0 0 0 1px rgba(75,68,88,0.04);
+  /* Słońce z pierwszego obrazka (prawa strona) */
+  .sun {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 75px;
   }
 
-  .scene{
-    position:relative;
-    width:100%;
-    padding-top:30px;
-    overflow:hidden;
+  .one-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-family: 'Fredoka One', cursive;
+    font-size: 90px;
+    margin-top: 40px;
+    line-height: 0.8;
   }
 
-  /* ---- Bunting (girlanda) ---- */
-  .bunting{
-    position:absolute;
-    top:-14px; left:-30px; right:-30px;
-    height:140px;
-    z-index:3;
-    pointer-events:none;
+  /* Miejsce na zdjęcie twarzy Hani */
+  .head {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-image: url('126503.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-right: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
 
-  /* ---- Sun, top right (from reference 1) ---- */
-  .sun-box{
-    position:absolute;
-    top:-46px; right:-46px;
-    width:200px; height:200px;
-    z-index:2;
-    pointer-events:none;
+  /* Czapeczka urodzinowa nałożona na głowę (z pomocą emoji lub możesz podmienić na obrazek) */
+  .hat {
+    position: absolute;
+    top: -50px;
+    left: 15px;
+    font-size: 55px;
+    transform: rotate(15deg);
   }
 
-  /* ---- Rainbow arc framing the photo ---- */
-  .rainbow-stage{
-    position:relative;
-    margin: 58px auto 14px;
-    width: 300px;
-    height: 230px;
+  .letter-n { color: #9da8d6; }
+  .letter-e { color: #8bbce6; }
+
+  .happy {
+    font-family: 'Great Vibes', cursive;
+    color: #ed7e9e;
+    font-size: 50px;
+    margin: -5px 0 5px 0;
   }
 
-  .rainbow-svg{
-    position:absolute;
-    bottom:0; left:50%;
-    transform:translateX(-50%);
-    width:300px; height:170px;
-    z-index:1;
+  .girl {
+    font-family: 'Fredoka One', cursive;
+    font-size: 70px;
+    letter-spacing: 2px;
   }
 
-  .photo-wrap{
-    position:absolute;
-    top:8px; left:50%;
-    transform:translateX(-52%);
-    width:186px; height:186px;
-    border-radius:50%;
-    z-index:4;
-    box-shadow: 0 14px 26px -10px rgba(75,68,88,0.35);
+  .g-g { color: #a4d1a2; }
+  .g-i { color: #f9d857; }
+  .g-r { color: #ef8ca9; }
+  .g-l { color: #c49bc8; }
+
+  .details {
+    margin-top: 40px;
+    color: #4a4a4a;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
 
-  .photo-wrap img{
-    width:100%; height:100%;
-    object-fit:cover;
-    border-radius:50%;
-    display:block;
-    border: 6px solid var(--cream);
+  .title {
+    color: #ed7e9e;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 15px 0;
+    letter-spacing: 1px;
   }
 
-  .party-hat{
-    position:absolute;
-    top:-22px; left:50%;
-    transform:translateX(-50%) rotate(-8deg);
-    width:50px;
-    z-index:5;
+  .date-time {
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 15px;
   }
 
-  /* ---- Sparkle / confetti decorations ---- */
-  .deco{
-    position:absolute;
-    z-index:2;
-    pointer-events:none;
+  .address {
+    font-size: 12px;
+    color: #666;
   }
 
-  /* ---- Typography blocks ---- */
-  .headline{
-    text-align:center;
-    padding: 6px 28px 0;
-    position:relative;
-    z-index:3;
-  }
-
-  .name{
-    font-family:'Fredoka', sans-serif;
-    font-weight:700;
-    font-size:52px;
-    line-height:1;
-    color:var(--violet);
-    margin:0;
-    letter-spacing:0.5px;
-  }
-
-  .kończy{
-    font-family:'Quicksand', sans-serif;
-    font-weight:600;
-    font-size:21px;
-    color:var(--sun);
-    margin:6px 0 2px;
-    letter-spacing:0.5px;
-  }
-
-  .roczek-row{
-    display:flex;
-    justify-content:center;
-    align-items:baseline;
-    gap:6px;
-    flex-wrap:wrap;
-    margin: 0 0 18px;
-  }
-
-  .roczek-letter{
-    font-family:'Fredoka', sans-serif;
-    font-weight:700;
-    font-size:46px;
-    line-height:1;
-  }
-
-  .l1{color:var(--rose-deep);}
-  .l2{color:var(--sun);}
-  .l3{color:var(--leaf);}
-  .l4{color:var(--violet);}
-  .l5{color:var(--peach);}
-  .l6{color:var(--sky);}
-
-  .divider{
-    width:64px; height:4px;
-    background:var(--rose);
-    border-radius:4px;
-    margin:0 auto 18px;
-    opacity:0.55;
-  }
-
-  .invite-copy{
-    text-align:center;
-    font-size:13px;
-    font-weight:700;
-    letter-spacing:2px;
-    color:var(--ink);
-    opacity:0.55;
-    margin: 0 0 14px;
-    text-transform:uppercase;
-  }
-
-  .details{
-    padding: 0 32px 38px;
-    text-align:center;
-  }
-
-  .detail-row{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:14px;
-    margin-bottom:18px;
-  }
-
-  .date-block{
-    background:var(--rose);
-    color:white;
-    border-radius:18px;
-    padding:10px 18px;
-    text-align:center;
-    line-height:1.05;
-    box-shadow: 0 8px 16px -6px rgba(217,112,127,0.5);
-  }
-
-  .date-block .day{
-    font-family:'Fredoka', sans-serif;
-    font-weight:700;
-    font-size:28px;
-    display:block;
-  }
-
-  .date-block .month{
-    font-size:12px;
-    font-weight:700;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-  }
-
-  .time-block{
-    font-size:15px;
-    font-weight:700;
-    color:var(--ink);
-  }
-
-  .time-block .label{
-    display:block;
-    font-size:11px;
-    font-weight:700;
-    letter-spacing:1.5px;
-    color:var(--violet);
-    text-transform:uppercase;
-    margin-bottom:2px;
-  }
-
-  .place{
-    font-size:15.5px;
-    font-weight:600;
-    line-height:1.5;
-    color:var(--ink);
-    margin-bottom: 4px;
-  }
-
-  .place .label{
-    display:block;
-    font-size:11px;
-    font-weight:700;
-    letter-spacing:1.5px;
-    color:var(--violet);
-    text-transform:uppercase;
-    margin-bottom:4px;
-  }
-
-  .footnote{
-    margin-top:18px;
-    font-size:13px;
-    font-weight:600;
-    color:var(--ink);
-    opacity:0.6;
-  }
-
-  .footnote span{
-    color:var(--rose-deep);
-    opacity:1;
-  }
-
-  .grass{
-    position:relative;
-    height:30px;
-    background:linear-gradient(180deg, transparent, rgba(181,201,138,0.18));
-  }
-
-  /* small floating sparkles scattered */
-  .spark{
-    position:absolute;
-    z-index:2;
-  }
-
-  @media (max-width:380px){
-    .name{font-size:44px;}
-    .roczek-letter{font-size:38px;}
-    .rainbow-stage{width:240px; height:240px;}
-    .photo-wrap{width:148px; height:148px;}
-  }
+  /* Drobne ozdobniki z tła */
+  .sparkle1 { position: absolute; bottom: 40px; left: 30px; font-size: 20px; color: #f9d857; }
+  .sparkle2 { position: absolute; bottom: 60px; right: 40px; font-size: 24px; color: #8bbce6; }
 </style>
 </head>
 <body>
 
-<div class="card">
-  <div class="scene">
+  <div class="card">
+    <div class="rainbow">🌈</div>
+    <div class="sun">☀️</div>
 
-    <!-- Bunting / girlanda -->
-    <svg class="bunting" viewBox="0 0 400 140" preserveAspectRatio="xMidYMin meet">
-      <path d="M -10 18 Q 200 70 410 18" fill="none" stroke="#C9A876" stroke-width="3" stroke-linecap="round"/>
-      <g>
-        <polygon points="40,26 64,26 52,68" fill="#E8919E"/>
-        <polygon points="84,32 108,32 96,76" fill="#F0B94A"/>
-        <polygon points="128,36 152,36 140,80" fill="#B5C98A"/>
-        <polygon points="172,38 196,38 184,82" fill="#9FCBDB"/>
-        <polygon points="216,37 240,37 228,81" fill="#A593C9"/>
-        <polygon points="260,34 284,34 272,78" fill="#EFA678"/>
-        <polygon points="304,29 328,29 316,72" fill="#E8919E"/>
-        <polygon points="348,23 372,23 360,64" fill="#F0B94A"/>
-      </g>
-    </svg>
-
-    <!-- Watercolor sun, top right -->
-    <div class="sun-box">
-      <svg class="sun-rays" viewBox="0 0 200 200" width="100%" height="100%">
-        <g fill="#F0B94A" opacity="0.95">
-          <ellipse cx="100" cy="20" rx="9" ry="26" transform="rotate(0 100 100)"/>
-          <ellipse cx="100" cy="20" rx="9" ry="26" transform="rotate(30 100 100)"/>
-          <ellipse cx="100" cy="20" rx="9" ry="26" transform="rotate(60 100 100)"/>
-          <ellipse cx="100" cy="20" rx="9" ry="26" transform="rotate(90 100 100)"/>
-          <ellipse cx="100" cy="20" rx="9" ry="26" transform="rotate(120 100 100)"/>
-          <ellipse cx="100" cy="20" rx="9" ry="26" transform="rotate(150 100 100)"/>
-          <ellipse cx="100" cy="20" rx="9" ry="26" transform="rotate(180 100 100)"/>
-          <ellipse cx="100" cy="20" rx="9" ry="26" transform="rotate(210 100 100)"/>
-        </g>
-      </svg>
-      <svg viewBox="0 0 200 200" width="100%" height="100%" style="position:absolute; top:0; left:0;">
-        <circle cx="100" cy="100" r="46" fill="#F0B94A"/>
-        <circle cx="88" cy="88" r="46" fill="#F3C770" opacity="0.55"/>
-      </svg>
-    </div>
-
-    <!-- floating sparkles -->
-    <svg class="spark float-1" style="top:118px; left:18px; width:20px;" viewBox="0 0 24 24"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#A593C9"/></svg>
-    <svg class="spark float-2" style="top:330px; right:22px; width:16px;" viewBox="0 0 24 24"><path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z" fill="#9FCBDB"/></svg>
-    <svg class="spark float-1" style="top:60px; left:280px; width:14px;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6" fill="#B5C98A"/></svg>
-
-    <!-- Rainbow + photo (signature element) -->
-    <div class="rainbow-stage">
-      <svg class="rainbow-svg" viewBox="0 0 300 170" preserveAspectRatio="xMidYMax meet">
-        <g fill="none" stroke-linecap="round">
-          <path d="M 8 165 A 142 142 0 0 1 292 165" stroke="#E8919E" stroke-width="19"/>
-          <path d="M 28 165 A 122 122 0 0 1 272 165" stroke="#EFA678" stroke-width="19"/>
-          <path d="M 48 165 A 102 102 0 0 1 252 165" stroke="#F0B94A" stroke-width="19"/>
-          <path d="M 68 165 A 82 82 0 0 1 232 165" stroke="#B5C98A" stroke-width="19"/>
-          <path d="M 88 165 A 62 62 0 0 1 212 165" stroke="#9FCBDB" stroke-width="19"/>
-          <path d="M 108 165 A 42 42 0 0 1 192 165" stroke="#A593C9" stroke-width="19"/>
-        </g>
-      </svg>
-
-      <div class="photo-wrap">
-        <img src="assets/hania.jpg" alt="Hania">
+    <div class="one-container">
+      <div class="head">
+        <div class="hat">🎉</div>
       </div>
-
-      <!-- party hat peeking above photo -->
-      <svg class="party-hat" viewBox="0 0 60 70">
-        <polygon points="30,0 6,58 54,58" fill="#E8919E"/>
-        <polygon points="30,0 18,30 42,30" fill="#F7C9CF"/>
-        <circle cx="30" cy="2" r="6" fill="#F0B94A"/>
-      </svg>
+      <div class="letter-n">N</div>
+      <div class="letter-e">E</div>
+    </div>
+    
+    <div class="happy">happy</div>
+    
+    <div class="girl">
+      <span class="g-g">G</span><span class="g-i">I</span><span class="g-r">R</span><span class="g-l">L</span>
     </div>
 
-    <!-- Headline -->
-    <div class="headline">
-      <p class="name">Hania</p>
-      <p class="kończy">kończy</p>
-      <div class="roczek-row">
-        <span class="roczek-letter l1">r</span>
-        <span class="roczek-letter l2">o</span>
-        <span class="roczek-letter l3">c</span>
-        <span class="roczek-letter l4">z</span>
-        <span class="roczek-letter l5">e</span>
-        <span class="roczek-letter l6">k</span>
-      </div>
+    <div class="details">
+      <p>Dołącz do nas by świętować</p>
+      <div class="title">1. URODZINY HANI</div>
+      <p class="date-time">NIEDZIELA, 26 LIPCA 2026<br>GODZINA 13:00</p>
+      <p class="address">ul. Dębowa, 49-345 Skorogoszcz</p>
     </div>
 
-    <div class="divider"></div>
-    <p class="invite-copy">Zapraszamy do wspólnego świętowania</p>
-
+    <div class="sparkle1">✨</div>
+    <div class="sparkle2">✨</div>
   </div>
-
-  <!-- Details -->
-  <div class="details reveal">
-    <div class="detail-row">
-      <div class="date-block">
-        <span class="day">26</span>
-        <span class="month">lipca</span>
-      </div>
-      <div class="time-block">
-        <span class="label">Godzina</span>
-        14:00
-      </div>
-    </div>
-
-    <p class="place">
-      <span class="label">Miejsce</span>
-      ul. Dębowa<br>
-      49-345 Skorogoszcz
-    </p>
-
-    <p class="footnote">Do zobaczenia! <span>🎈</span></p>
-  </div>
-
-  <div class="grass"></div>
-</div>
 
 </body>
 </html>
