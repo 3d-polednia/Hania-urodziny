@@ -7,7 +7,7 @@ BEGIN:VEVENT
 UID:hania-roczek-2026@hania-urodziny
 DTSTAMP:20260617T192822Z
 DTSTART;TZID=Europe/Warsaw:20260726T130000
-DTEND;TZID=Europe/Warsaw:20260726T160000
+DTEND;TZID=Europe/Warsaw:20260726T200000
 SUMMARY:Hania kończy roczek 🎈
 DESCRIPTION:Zapraszamy do wspólnego świętowania pierwszych urodzin Hani!
 LOCATION:ul. Dębowa\, 49-345 Skorogoszcz
