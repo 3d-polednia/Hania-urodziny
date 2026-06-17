@@ -5,17 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>1. Urodziny Hani!</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Great+Vibes&family=Montserrat:wght@500;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,700&family=Montserrat:wght@400;600&display=swap');
 
   body {
-    /* Tło w różowo-białe paski z drugiego obrazka */
-    background: repeating-linear-gradient(
-      90deg,
-      #ffdbea,
-      #ffdbea 20px,
-      #ffffff 20px,
-      #ffffff 40px
-    );
+    background-color: #f5f5f5;
     font-family: 'Montserrat', sans-serif;
     display: flex;
     justify-content: center;
@@ -26,150 +19,205 @@
   }
 
   .card {
-    background: #fffcf8;
-    /* Falista ramka zrobiona za pomocą zaokrągleń i cienia */
-    border: 6px solid #f48bb0;
-    border-radius: 30px;
+    background: #ffffff;
     width: 100%;
-    max-width: 450px;
-    padding: 50px 20px;
+    max-width: 500px;
+    padding: 40px 20px;
     text-align: center;
     position: relative;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     overflow: hidden;
+    /* Złagodzone rogi karty */
+    border-radius: 15px; 
   }
 
-  /* Tęcza z pierwszego obrazka (lewa strona) */
-  .rainbow {
+  /* Grafiki dekoracyjne (zastępcze emoji/symbole przypominające akwarele z obrazka) */
+  .bunting {
     position: absolute;
-    top: 20px;
-    left: 10px;
-    font-size: 70px;
-    transform: rotate(-15deg);
+    top: -20px;
+    left: 20px;
+    font-size: 80px;
+    opacity: 0.8;
   }
 
-  /* Słońce z pierwszego obrazka (prawa strona) */
   .sun {
     position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 75px;
+    top: -10px;
+    right: -20px;
+    font-size: 140px;
+    opacity: 0.9;
   }
 
-  .one-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    font-family: 'Fredoka One', cursive;
-    font-size: 90px;
-    margin-top: 40px;
-    line-height: 0.8;
+  .rainbow {
+    position: absolute;
+    bottom: -40px;
+    left: -50px;
+    font-size: 250px;
+    opacity: 0.8;
+    z-index: 0;
   }
 
-  /* Miejsce na zdjęcie twarzy Hani */
-  .head {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background-image: url('126503.jpg');
-    background-size: cover;
-    background-position: center;
+  /* Kontener na główny napis i zdjęcie */
+  .header-section {
     position: relative;
-    margin-right: 5px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-top: 80px;
+    margin-bottom: 40px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  /* Czapeczka urodzinowa nałożona na głowę (z pomocą emoji lub możesz podmienić na obrazek) */
+  .face-container {
+    position: absolute;
+    left: 10%;
+    top: 10px;
+    z-index: 2;
+  }
+
+  /* Czapeczka urodzinowa */
   .hat {
     position: absolute;
-    top: -50px;
-    left: 15px;
+    top: -45px;
+    left: -10px;
+    font-size: 60px;
+    transform: rotate(-15deg);
+    z-index: 3;
+  }
+
+  .face {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+
+  /* Typografia tytułowa */
+  .name {
+    font-family: 'Playfair Display', serif;
+    color: #b39cd0; /* Fioletowy */
     font-size: 55px;
-    transform: rotate(15deg);
+    margin: 0;
+    line-height: 1;
+    margin-left: 40px; /* Przesunięcie w prawo, by zrobić miejsce na zdjęcie */
   }
 
-  .letter-n { color: #9da8d6; }
-  .letter-e { color: #8bbce6; }
-
-  .happy {
-    font-family: 'Great Vibes', cursive;
-    color: #ed7e9e;
-    font-size: 50px;
-    margin: -5px 0 5px 0;
+  .is-turning {
+    font-family: 'Playfair Display', serif;
+    color: #f4c26a; /* Żółto-pomarańczowy */
+    font-size: 32px;
+    margin: 5px 0 0 0;
+    margin-left: 40px;
   }
 
-  .girl {
-    font-family: 'Fredoka One', cursive;
-    font-size: 70px;
-    letter-spacing: 2px;
+  .one {
+    font-family: 'Playfair Display', serif;
+    color: #f78da7; /* Różowy */
+    font-size: 110px;
+    margin: -10px 0 0 0;
+    line-height: 1;
   }
 
-  .g-g { color: #a4d1a2; }
-  .g-i { color: #f9d857; }
-  .g-r { color: #ef8ca9; }
-  .g-l { color: #c49bc8; }
+  /* Sekcja informacyjna */
+  .details-section {
+    position: relative;
+    z-index: 1;
+    margin-top: 50px;
+    padding-left: 40%; /* Przesunięcie tekstu na prawą stronę, obok tęczy */
+    text-align: center;
+  }
 
-  .details {
-    margin-top: 40px;
-    color: #4a4a4a;
-    font-size: 13px;
-    letter-spacing: 2px;
+  .join-us {
+    font-size: 12px;
+    color: #555;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
     text-transform: uppercase;
   }
 
-  .title {
-    color: #ed7e9e;
-    font-size: 26px;
-    font-weight: 700;
-    margin: 15px 0;
-    letter-spacing: 1px;
+  .date-time-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
   }
 
-  .date-time {
-    font-weight: 700;
-    margin-bottom: 10px;
-    font-size: 15px;
+  .date-block {
+    text-align: right;
+    padding-right: 15px;
+    border-right: 2px solid #888;
+  }
+
+  .date-month {
+    font-size: 16px;
+    color: #555;
+    letter-spacing: 2px;
+    margin: 0;
+  }
+
+  .date-day {
+    font-family: 'Playfair Display', serif;
+    font-size: 45px;
+    color: #f78da7;
+    margin: -5px 0 0 0;
+    line-height: 1;
+  }
+
+  .time-block {
+    text-align: left;
+    padding-left: 15px;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.8;
   }
 
   .address {
     font-size: 12px;
-    color: #666;
+    color: #555;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    margin-top: 20px;
   }
-
-  /* Drobne ozdobniki z tła */
-  .sparkle1 { position: absolute; bottom: 40px; left: 30px; font-size: 20px; color: #f9d857; }
-  .sparkle2 { position: absolute; bottom: 60px; right: 40px; font-size: 24px; color: #8bbce6; }
 </style>
 </head>
 <body>
 
   <div class="card">
-    <div class="rainbow">🌈</div>
+    <div class="bunting">🎊</div>
     <div class="sun">☀️</div>
+    <div class="rainbow">🌈</div>
 
-    <div class="one-container">
-      <div class="head">
+    <div class="header-section">
+      <div class="face-container">
         <div class="hat">🎉</div>
+        <img src="assets/hania.jpg" alt="Twarz Hani" class="face">
       </div>
-      <div class="letter-n">N</div>
-      <div class="letter-e">E</div>
-    </div>
-    
-    <div class="happy">happy</div>
-    
-    <div class="girl">
-      <span class="g-g">G</span><span class="g-i">I</span><span class="g-r">R</span><span class="g-l">L</span>
+      
+      <h1 class="name">Hania</h1>
+      <h2 class="is-turning">is turning</h2>
+      <h3 class="one">one</h3>
     </div>
 
-    <div class="details">
-      <p>Dołącz do nas by świętować</p>
-      <div class="title">1. URODZINY HANI</div>
-      <p class="date-time">NIEDZIELA, 26 LIPCA 2026<br>GODZINA 13:00</p>
-      <p class="address">ul. Dębowa, 49-345 Skorogoszcz</p>
-    </div>
+    <div class="details-section">
+      <div class="join-us">DOŁĄCZ DO NAS BY ŚWIĘTOWAĆ</div>
+      
+      <div class="date-time-container">
+        <div class="date-block">
+          <p class="date-month">LIPIEC</p>
+          <p class="date-day">26</p>
+        </div>
+        <div class="time-block">
+          GODZINA<br>
+          13:00
+        </div>
+      </div>
 
-    <div class="sparkle1">✨</div>
-    <div class="sparkle2">✨</div>
+      <div class="address">
+        UL. DĘBOWA<br>
+        49-345 SKOROGOSZCZ
+      </div>
+    </div>
   </div>
 
 </body>
